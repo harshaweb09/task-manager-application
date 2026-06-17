@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <nav>
+          <h1>Task Manager</h1>
+          <button type="button" id="create">Create Task</button>
+        </nav>
+        <div class="page-divider"></div>
+        <div class="modal-overlay hidden">
+          <div class="modal">
+            <div class="modal-header">
+              <h2>Create Task</h2>
+              <button type="button" class="modal-close">×</button>
+            </div>
+            <form class="task-form">
+              <div class="form-group">
+                <label for="title">Task Title</label>
+                <input type="text" id="title" placeholder="Enter task title" />
+              </div>
+              <div class="form-group">
+                <label for="description"> Description </label>
+                <textarea
+                  id="description"
+                  rows="4"
+                  placeholder="Enter task description"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="category"> Category </label>
+                <select id="category">
+                  <option value="study">📚 Study</option>
+                  <option value="work">💼 Work</option>
+                  <option value="personal">🏠 Personal</option>
+                  <option value="health">💪 Health</option>
+                  <option value="fitness">🏃 Fitness</option>
+                  <option value="learning">🎓 Learning</option>
+                  <option value="coding">💻 Coding</option>
+                  <option value="project">🚀 Project</option>
+                  <option value="meeting">📅 Meeting</option>
+                  <option value="shopping">🛒 Shopping</option>
+                  <option value="finance">💰 Finance</option>
+                  <option value="travel">✈️ Travel</option>
+                  <option value="family">👨‍👩‍👧 Family</option>
+                  <option value="home">🏡 Home</option>
+                  <option value="other">📌 Other</option>
+                </select>
+              </div>
+              <button type="submit" class="submit-btn">Add Task</button>
+            </form>
+          </div>
+        </div>
+        <section class="task-container">
+          <!-- <article
+            class="task-card pending"
+            data-id="1"
+            data-status="pending"
+            data-category="study"
+          >
+            <div class="task-content">
+              <div class="task-header">
+                <div class="task-title-wrapper">
+                  <span class="status-dot"></span>
+                  <h2 class="task-title">JavaScript</h2>
+                </div>
+                <span class="task-status badge">Pending</span>
+              </div>
+              <p class="task-description">
+                Practice DOM manipulation and event delegation
+              </p>
+              <span class="task-category badge">Study</span>
+            </div>
+            <div class="task-divider"></div>
+            <div class="task-actions">
+              <button type="button" data-action="edit" class="btn btn-edit">
+                Edit
+              </button>
+              <button
+                type="button"
+                data-action="complete"
+                class="btn btn-complete"
+              >
+                Complete
+              </button>
+              <button type="button" data-action="delete" class="btn btn-delete">
+                Delete
+              </button>
+            </div>
+          </article> -->
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
