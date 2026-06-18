@@ -6,6 +6,7 @@ const titleInput = document.querySelector("#title");
 const descriptionInput = document.querySelector("#description");
 const categorySelect = document.querySelector("#category");
 const taskContainer = document.querySelector(".task-container");
+const clearAllBtn = document.querySelector("#clear-all");
 const submitBtn = document.querySelector("#submit-btn");
 const themeToggle = document.querySelector("#theme-toggle");
 const currentSavedTheme = localStorage.getItem("theme") || "light";
@@ -29,6 +30,17 @@ let editingTaskId = null;
 
 function renderTasks() {
   taskContainer.innerHTML = "";
+  clearAllBtn.disabled = tasks.length === 0;
+
+  if (tasks.length === 0) {
+    taskContainer.innerHTML = `
+      <div class="empty-state">
+        <h2>📝 No Tasks Yet</h2>
+        <p>Create your first task to get started.</p>
+      </div>
+    `;
+    return;
+  }
 
   tasks.forEach((task) => {
     createTaskCard(task);
@@ -47,12 +59,25 @@ closeBtn.addEventListener("click", () => {
   modalOverlay.classList.add("hidden");
 });
 
+clearAllBtn.addEventListener("click", () => {
+  if (!confirm("Are you sure you want to clear all tasks?")) {
+    return;
+  }
+  tasks.length = 0;
+
+  saveTasks();
+  renderTasks();
+});
+
 taskContainer.addEventListener("click", (e) => {
   const action = e.target.dataset.action;
   if (!action) return;
   const taskCard = e.target.closest(".task-card");
   const taskId = Number(taskCard.dataset.id);
   if (action === "delete") {
+    if (!confirm("Delete this task?")) {
+      return;
+    }
     const index = tasks.findIndex((task) => task.id === taskId);
     tasks.splice(index, 1);
     saveTasks();

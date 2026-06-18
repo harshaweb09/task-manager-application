@@ -28,7 +28,7 @@ main {
 
 nav {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 16px 24px;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -36,20 +36,32 @@ nav {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-nav #create {
-  padding: 10px 20px;
+.nav-actions {
+  display: flex;
+  gap: 15px;
+}
+
+nav .nav-btn {
+  padding: 10px 14px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+nav #create {
   font-weight: 600;
   background-color: #4f46e5;
   color: #ffffff;
-  transition: all 0.2s ease;
 }
 
 nav #create:hover {
-  background: #4338ca;
+  background-color: #4338ca;
+}
+
+nav #clear-all:hover {
+  background-color: #dadada;
 }
 
 .page-divider {
@@ -332,19 +344,6 @@ html[data-theme="dark"] select {
   border-color: #4b5563;
 }
 
-.nav-actions {
-  display: flex;
-  gap: 10px;
-}
-
-#theme-toggle {
-  padding: 10px 14px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
 body,
 main,
 nav,
@@ -353,4 +352,27 @@ nav,
     background-color 0.3s ease,
     color 0.3s ease,
     border-color 0.3s ease;
+}
+
+.empty-state {
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  border: 1px dashed #d1d5db;
+}
+
+.empty-state h2 {
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.empty-state p {
+  color: #6b7280;
+}
+
+#clear-all:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
