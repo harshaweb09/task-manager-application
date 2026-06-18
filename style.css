@@ -92,7 +92,7 @@ nav #create:hover {
 }
 
 .task-card {
-  width: 340px;
+  width: min(340px, 100%);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -414,4 +414,20 @@ nav,
 .empty-state h2,
 .empty-state p {
   transition: color 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-actions {
+    width: 100%;
+  }
+
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
 }
