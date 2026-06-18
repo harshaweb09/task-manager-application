@@ -1,3 +1,4 @@
+document.body.setAttribute("data-theme", "light");
 const createBtn = document.querySelector("#create");
 const modalOverlay = document.querySelector(".modal-overlay");
 const closeBtn = document.querySelector(".modal-close");
@@ -7,6 +8,19 @@ const descriptionInput = document.querySelector("#description");
 const categorySelect = document.querySelector("#category");
 const taskContainer = document.querySelector(".task-container");
 const submitBtn = document.querySelector("#submit-btn");
+const themeToggle = document.querySelector("#theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.body.dataset.theme;
+
+  if (currentTheme === "light") {
+    document.body.setAttribute("data-theme", "dark");
+    themeToggle.textContent = "☀️";
+  } else {
+    document.body.setAttribute("data-theme", "light");
+    themeToggle.textContent = "🌙";
+  }
+});
 
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let editingTaskId = null;
