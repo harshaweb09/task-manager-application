@@ -314,6 +314,7 @@ body[data-theme="dark"] .modal {
 
 body[data-theme="dark"] .task-title,
 body[data-theme="dark"] .modal-header h2,
+body[data-theme="dark"] .modal-header button,
 body[data-theme="dark"] nav h1,
 body[data-theme="dark"] label {
   color: #f9fafb;
