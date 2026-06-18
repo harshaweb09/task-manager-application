@@ -48,10 +48,10 @@ nav .nav-btn {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.2s ease;
+  font-weight: 600;
 }
 
 nav #create {
-  font-weight: 600;
   background-color: #4f46e5;
   color: #ffffff;
 }
@@ -60,8 +60,22 @@ nav #create:hover {
   background-color: #4338ca;
 }
 
-nav #clear-all:hover {
-  background-color: #dadada;
+#clear-all {
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  color: #4b5563;
+  transition: all 0.2s ease;
+}
+
+#clear-all:hover:not(:disabled) {
+  background: #e5e7eb;
+  border-color: #cbd5e1;
+  color: #374151;
+}
+
+#clear-all:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .page-divider {
@@ -314,6 +328,24 @@ nav #clear-all:hover {
   display: none;
 }
 
+.empty-state {
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  border: 1px dashed #d1d5db;
+}
+
+.empty-state h2 {
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.empty-state p {
+  color: #6b7280;
+}
+
 html[data-theme="dark"] main {
   background: #111827;
 }
@@ -344,35 +376,42 @@ html[data-theme="dark"] select {
   border-color: #4b5563;
 }
 
+html[data-theme="dark"] .empty-state {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html[data-theme="dark"] .empty-state h2 {
+  color: #f9fafb;
+}
+
+html[data-theme="dark"] .empty-state p {
+  color: #d1d5db;
+}
+
+html[data-theme="dark"] #clear-all {
+  background: #374151;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+html[data-theme="dark"] #clear-all:hover:not(:disabled) {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
 body,
 main,
 nav,
-.task-card {
+.task-card,
+.empty-state {
   transition:
     background-color 0.3s ease,
     color 0.3s ease,
     border-color 0.3s ease;
 }
 
-.empty-state {
-  width: 100%;
-  padding: 60px 20px;
-  text-align: center;
-  background: white;
-  border-radius: 20px;
-  border: 1px dashed #d1d5db;
-}
-
-.empty-state h2 {
-  margin-bottom: 10px;
-  color: #111827;
-}
-
+.empty-state h2,
 .empty-state p {
-  color: #6b7280;
-}
-
-#clear-all:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+  transition: color 0.3s ease;
 }
