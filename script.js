@@ -10,18 +10,21 @@ const clearAllBtn = document.querySelector("#clear-all");
 const submitBtn = document.querySelector("#submit-btn");
 const themeToggle = document.querySelector("#theme-toggle");
 const currentSavedTheme = localStorage.getItem("theme") || "light";
-themeToggle.textContent = currentSavedTheme === "dark" ? "☀️" : "🌙";
+themeToggle.innerHTML =
+  currentSavedTheme === "dark"
+    ? '<i class="ri-sun-fill"></i>'
+    : '<i class="ri-moon-fill"></i>';
 
 themeToggle.addEventListener("click", () => {
   const currentTheme = document.documentElement.dataset.theme;
   if (currentTheme === "light") {
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
-    themeToggle.textContent = "☀️";
+    themeToggle.innerHTML = '<i class="ri-sun-fill"></i>';
   } else {
     document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
-    themeToggle.textContent = "🌙";
+    themeToggle.innerHTML = '<i class="ri-moon-fill"></i>';
   }
 });
 
@@ -35,8 +38,9 @@ function renderTasks() {
   if (tasks.length === 0) {
     taskContainer.innerHTML = `
       <div class="empty-state">
-        <h2>📝 No Tasks Yet</h2>
-        <p>Create your first task to get started.</p>
+        <h2>🚀 Ready to be productive?
+</h2>
+        <p>Create your first task and start organizing your day.</p>
       </div>
     `;
     return;
