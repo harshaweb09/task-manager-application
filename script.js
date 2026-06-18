@@ -1,4 +1,3 @@
-document.body.setAttribute("data-theme", "light");
 const createBtn = document.querySelector("#create");
 const modalOverlay = document.querySelector(".modal-overlay");
 const closeBtn = document.querySelector(".modal-close");
@@ -9,15 +8,18 @@ const categorySelect = document.querySelector("#category");
 const taskContainer = document.querySelector(".task-container");
 const submitBtn = document.querySelector("#submit-btn");
 const themeToggle = document.querySelector("#theme-toggle");
+const currentSavedTheme = localStorage.getItem("theme") || "light";
+themeToggle.textContent = currentSavedTheme === "dark" ? "☀️" : "🌙";
 
 themeToggle.addEventListener("click", () => {
-  const currentTheme = document.body.dataset.theme;
-
+  const currentTheme = document.documentElement.dataset.theme;
   if (currentTheme === "light") {
-    document.body.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
     themeToggle.textContent = "☀️";
   } else {
-    document.body.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
     themeToggle.textContent = "🌙";
   }
 });

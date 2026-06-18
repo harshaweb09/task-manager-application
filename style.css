@@ -302,31 +302,31 @@ nav #create:hover {
   display: none;
 }
 
-body[data-theme="dark"] main {
+html[data-theme="dark"] main {
   background: #111827;
 }
 
-body[data-theme="dark"] nav,
-body[data-theme="dark"] .task-card,
-body[data-theme="dark"] .modal {
+html[data-theme="dark"] nav,
+html[data-theme="dark"] .task-card,
+html[data-theme="dark"] .modal {
   background: #1f2937;
 }
 
-body[data-theme="dark"] .task-title,
-body[data-theme="dark"] .modal-header h2,
-body[data-theme="dark"] .modal-header button,
-body[data-theme="dark"] nav h1,
-body[data-theme="dark"] label {
+html[data-theme="dark"] .task-title,
+html[data-theme="dark"] .modal-header h2,
+html[data-theme="dark"] .modal-header button,
+html[data-theme="dark"] nav h1,
+html[data-theme="dark"] label {
   color: #f9fafb;
 }
 
-body[data-theme="dark"] .task-description {
+html[data-theme="dark"] .task-description {
   color: #d1d5db;
 }
 
-body[data-theme="dark"] input,
-body[data-theme="dark"] textarea,
-body[data-theme="dark"] select {
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
   background: #374151;
   color: white;
   border-color: #4b5563;
