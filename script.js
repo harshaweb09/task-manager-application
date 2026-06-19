@@ -144,7 +144,7 @@ function createTaskCard(task) {
   taskDescription.textContent = task.description;
 
   const taskCategory = document.createElement("span");
-  taskCategory.classList.add("task-category", "badge");
+  taskCategory.classList.add("task-category", "badge", task.category);
   taskCategory.textContent = task.category;
 
   taskContent.append(taskHeader, taskDescription, taskCategory);
