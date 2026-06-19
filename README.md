@@ -1,18 +1,40 @@
 # Task Manager Application
 
-A simple Task Manager built using HTML, CSS, and Vanilla JavaScript. This project allows users to create, edit, complete, and delete tasks while persisting data using Local Storage.
+A modern Task Manager built using HTML, CSS, and Vanilla JavaScript. The application allows users to create, edit, complete, and delete tasks while storing data in Local Storage for persistence across page refreshes.
 
 ## Features
 
-- Create Tasks
-- Edit Tasks
-- Complete Tasks
-- Delete Tasks
+- Create New Tasks
+- Edit Existing Tasks
+- Mark Tasks as Completed
+- Delete Individual Tasks
+- Clear All Tasks
 - Task Categories
-- Theme Toggle (Light/Dark Mode)
-- Local Storage Support
-- Event Delegation
-- Responsive UI
+- Empty State UI
+- Light / Dark Theme Toggle
+- Theme Persistence using Local Storage
+- Task Persistence using Local Storage
+- Responsive Design
+- Event Delegation for Action Handling
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Local Storage API
+
+## Project Highlights
+
+This project focuses on JavaScript DOM Manipulation and browser fundamentals. Tasks are dynamically created and rendered using JavaScript, while Event Delegation is used to efficiently handle Edit, Complete, and Delete actions.
+
+The application also includes:
+
+- Dynamic UI Updates
+- Theme Switching
+- Persistent Storage
+- Responsive Layout
+- Empty State Handling
 
 ---
 
@@ -266,7 +288,7 @@ localStorage.setItem("tasks", JSON.stringify(tasks));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 ```
 
-In this project, Local Storage is used to persist tasks so they remain available after page refreshes.
+In this project, Local Storage is used to persist tasks and theme preferences so they remain available after page refreshes.
 
 ---
 
@@ -282,11 +304,14 @@ Through this project, I gained hands-on experience with:
 - Event Capturing
 - Attributes vs Properties
 - Local Storage
-- Theme Switching
-- CRUD Operations using JavaScript
+- Theme Persistence
+- Responsive Design
+- CRUD Operations
+- Conditional Rendering
+- UI State Management
 
 ---
 
 ## Conclusion
 
-This project helped me understand how browsers render web pages and how JavaScript handles events. It also gave me practical experience with DOM Manipulation, Event Delegation, Local Storage, Theme Switching, and building a complete Task Manager using Vanilla JavaScript.
+Building this Task Manager helped me strengthen my understanding of JavaScript fundamentals and browser internals. It gave me practical experience with DOM Manipulation, Event Delegation, Local Storage, Theme Persistence, Responsive Design, and creating a complete CRUD application using Vanilla JavaScript.

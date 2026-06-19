@@ -54,6 +54,9 @@ function renderTasks() {
 renderTasks();
 
 createBtn.addEventListener("click", () => {
+  editingTaskId = null;
+  taskForm.reset();
+  submitBtn.textContent = "Add Task";
   modalOverlay.classList.remove("hidden");
 });
 
